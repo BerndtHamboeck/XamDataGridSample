@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v15.1"
+  x:Class="XamDataGridSample.MainXamlPage">
+
+  <StackLayout>
+    <Label FontSize="Large">Grid Demo - CodeFest.at Feeds</Label>
+    <Label  FontSize="Medium">datagrids everywhere</Label>
+    <ActivityIndicator x:Name="activityIndicator"
+                       IsVisible="true" IsRunning="true" />
+
+    <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding}"
+            NewItemRowVisibility = "false"
+            SortMode = "Multiple" AutoFilterPanelVisibility="true">
+      <dxGrid:GridControl.Columns>
+        <dxGrid:DateColumn FieldName="PubDate" Caption="Date" DisplayFormat="d"
+                   IsGrouped = "true" GroupInterval = "Date" Width="50"
+                            SortOrder = "Descending" SortIndex = "0"/>
+        <dxGrid:TextColumn FieldName="Author" Caption = "Author" Width="100"
+                           SortOrder = "Ascending" SortIndex = "1"/>
+        <dxGrid:TextColumn FieldName="Title" />
+      </dxGrid:GridControl.Columns>
+    </dxGrid:GridControl>
+
+  </StackLayout>
+</ContentPage>
+
